@@ -112,14 +112,12 @@ export default function Hero() {
         style={{
           position: "relative",
           zIndex: 2,
-          width: "min(1180px,100%)",
+          width: "min(1280px, 100%)",
           margin: "0 auto",
           display: "grid",
           gridTemplateColumns: "1fr 0.95fr",
-          gap: "60px",
+          gap: "70px",
           alignItems: "center",
-
-          /* Hero normal position */
           transform: "translateY(0)",
         }}
       >
@@ -130,18 +128,18 @@ export default function Hero() {
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "9px",
-              marginBottom: "22px",
+              gap: "10px",
+              marginBottom: "25px",
               color: "#4DA3FF",
               fontFamily: "Arial,sans-serif",
-              fontSize: "9px",
+              fontSize: "10px",
               fontWeight: 700,
               letterSpacing: ".25em",
             }}
           >
             <span
               style={{
-                width: "27px",
+                width: "30px",
                 height: "1px",
                 background: "#4DA3FF",
               }}
@@ -154,10 +152,10 @@ export default function Hero() {
             className="hero-title"
             style={{
               margin: 0,
-              maxWidth: "700px",
+              maxWidth: "760px",
               color: "#F4F7FC",
               fontFamily: "Georgia,serif",
-              fontSize: "clamp(45px,7vw,55px)",
+              fontSize: "clamp(48px,7vw,64px)",
               fontWeight: 400,
               lineHeight: 0.98,
               letterSpacing: "-.06em",
@@ -177,12 +175,12 @@ export default function Hero() {
           <p
             className="hero-description"
             style={{
-              maxWidth: "620px",
-              margin: "28px 0 0",
+              maxWidth: "680px",
+              margin: "30px 0 0",
               color: "#8298B2",
               fontFamily: "Arial,sans-serif",
-              fontSize: "15px",
-              lineHeight: 1.8,
+              fontSize: "16px",
+              lineHeight: 1.85,
             }}
           >
             I&apos;m an App Developer crafting beautiful, scalable and
@@ -196,8 +194,8 @@ export default function Hero() {
               display: "flex",
               flexWrap: "wrap",
               alignItems: "center",
-              gap: "12px",
-              marginTop: "32px",
+              gap: "14px",
+              marginTop: "36px",
             }}
           >
             <Link
@@ -205,42 +203,42 @@ export default function Hero() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "16px",
-                padding: "14px 20px",
+                gap: "17px",
+                padding: "15px 22px",
                 borderRadius: "5px",
                 background: "#2F80FF",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 fontFamily: "Arial,sans-serif",
-                fontSize: "11px",
+                fontSize: "12px",
                 fontWeight: 700,
                 transition: "all .3s ease",
               }}
             >
               View My Work
-              <span style={{ fontSize: "15px" }}>→</span>
+              <span style={{ fontSize: "16px" }}>→</span>
             </Link>
 
             <Link
-              href="/experience"
+              href="#journey"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "14px",
-                padding: "14px 20px",
+                gap: "15px",
+                padding: "15px 22px",
                 border: "1px solid rgba(77,163,255,.3)",
                 borderRadius: "5px",
                 background: "rgba(47,128,255,.04)",
                 color: "#8EABC8",
                 textDecoration: "none",
                 fontFamily: "Arial,sans-serif",
-                fontSize: "11px",
+                fontSize: "12px",
                 fontWeight: 700,
                 transition: "all .3s ease",
               }}
             >
               View My Journey
-              <span style={{ fontSize: "14px" }}>↗</span>
+              <span style={{ fontSize: "15px" }}>↗</span>
             </Link>
           </div>
         </div>
@@ -251,7 +249,7 @@ export default function Hero() {
           style={{
             position: "relative",
             width: "100%",
-            maxWidth: "460px",
+            maxWidth: "500px",
             margin: "0 auto",
           }}
         >
@@ -273,7 +271,7 @@ export default function Hero() {
           <div
             style={{
               position: "relative",
-              padding: "30px",
+              padding: "34px",
               border: "1px solid rgba(120,160,210,.18)",
               borderRadius: "14px",
               background:
@@ -286,14 +284,14 @@ export default function Hero() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                marginBottom: "45px",
+                marginBottom: "48px",
               }}
             >
               <span
                 style={{
                   color: "#45617F",
                   fontFamily: "monospace",
-                  fontSize: "9px",
+                  fontSize: "10px",
                 }}
               >
                 BUILDING MODERN DIGITAL PRODUCTS
@@ -302,7 +300,7 @@ export default function Hero() {
               <span
                 style={{
                   color: "#4DA3FF",
-                  fontSize: "13px",
+                  fontSize: "14px",
                 }}
               >
                 ↗
@@ -312,12 +310,12 @@ export default function Hero() {
             <div
               style={{
                 display: "grid",
-                gap: "14px",
+                gap: "16px",
               }}
             >
               <div
                 style={{
-                  padding: "20px",
+                  padding: "22px",
                   border: "1px solid rgba(77,163,255,.16)",
                   borderRadius: "9px",
                   background: "rgba(47,128,255,.035)",
@@ -328,14 +326,14 @@ export default function Hero() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    marginBottom: "18px",
+                    marginBottom: "19px",
                   }}
                 >
                   <span
                     style={{
                       color: "#4DA3FF",
                       fontFamily: "monospace",
-                      fontSize: "20px",
+                      fontSize: "21px",
                     }}
                   >
                     {"</>"}
@@ -345,7 +343,7 @@ export default function Hero() {
                     style={{
                       color: "#45617F",
                       fontFamily: "monospace",
-                      fontSize: "8px",
+                      fontSize: "9px",
                     }}
                   >
                     DEVELOPER
@@ -354,10 +352,10 @@ export default function Hero() {
 
                 <h3
                   style={{
-                    margin: "0 0 7px",
+                    margin: "0 0 8px",
                     color: "#F1F6FC",
                     fontFamily: "Georgia,serif",
-                    fontSize: "20px",
+                    fontSize: "22px",
                     fontWeight: 400,
                   }}
                 >
@@ -369,7 +367,7 @@ export default function Hero() {
                     margin: 0,
                     color: "#7189A5",
                     fontFamily: "Arial,sans-serif",
-                    fontSize: "11px",
+                    fontSize: "12px",
                   }}
                 >
                   Flutter · Next.js · Node.js
@@ -378,7 +376,7 @@ export default function Hero() {
 
               <div
                 style={{
-                  padding: "20px",
+                  padding: "22px",
                   border: "1px solid rgba(77,163,255,.16)",
                   borderRadius: "9px",
                   background: "rgba(47,128,255,.025)",
@@ -389,14 +387,14 @@ export default function Hero() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    marginBottom: "18px",
+                    marginBottom: "19px",
                   }}
                 >
                   <span
                     style={{
                       color: "#4DA3FF",
                       fontFamily: "monospace",
-                      fontSize: "20px",
+                      fontSize: "21px",
                     }}
                   >
                     {"</>"}
@@ -406,7 +404,7 @@ export default function Hero() {
                     style={{
                       color: "#45617F",
                       fontFamily: "monospace",
-                      fontSize: "8px",
+                      fontSize: "9px",
                     }}
                   >
                     DEVELOPER
@@ -415,10 +413,10 @@ export default function Hero() {
 
                 <h3
                   style={{
-                    margin: "0 0 7px",
+                    margin: "0 0 8px",
                     color: "#F1F6FC",
                     fontFamily: "Georgia,serif",
-                    fontSize: "20px",
+                    fontSize: "22px",
                     fontWeight: 400,
                   }}
                 >
@@ -430,7 +428,7 @@ export default function Hero() {
                     margin: 0,
                     color: "#7189A5",
                     fontFamily: "Arial,sans-serif",
-                    fontSize: "11px",
+                    fontSize: "12px",
                   }}
                 >
                   Mobile · Web · Backend · Cloud
@@ -451,12 +449,12 @@ export default function Hero() {
 
           .hero-container {
             grid-template-columns: 1fr !important;
-            gap: 50px !important;
+            gap: 55px !important;
             transform: translateY(0) !important;
           }
 
           .hero-card {
-            max-width: 600px !important;
+            max-width: 620px !important;
           }
         }
 
@@ -466,17 +464,17 @@ export default function Hero() {
           }
 
           .hero-container {
-            gap: 40px !important;
+            gap: 42px !important;
             transform: translateY(0) !important;
           }
 
           .hero-title {
-            font-size: clamp(42px, 13vw, 60px) !important;
+            font-size: clamp(44px, 13vw, 62px) !important;
           }
 
           .hero-description {
-            font-size: 14px !important;
-            line-height: 1.75 !important;
+            font-size: 14.5px !important;
+            line-height: 1.8 !important;
           }
 
           .hero-buttons {
@@ -489,7 +487,7 @@ export default function Hero() {
           }
 
           .hero-card > div {
-            padding: 22px !important;
+            padding: 24px !important;
           }
         }
       `}</style>

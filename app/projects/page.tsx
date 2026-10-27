@@ -30,7 +30,8 @@ export default function ProjectsPage() {
 
         <div className="relative z-10 mx-auto w-full max-w-[1350px] px-6 pb-24 pt-28 sm:px-10 lg:px-14 lg:pb-28 lg:pt-32">
 
-          <div className="grid items-center gap-16 lg:grid-cols-[1fr_0.9fr]">
+          {/* ONLY HERO POSITION CHANGED */}
+          <div className="grid items-center gap-16 lg:grid-cols-[1fr_0.9fr] lg:-translate-y-[35px]">
 
             <div>
 
@@ -43,10 +44,10 @@ export default function ProjectsPage() {
               </div>
 
               <h1 className="max-w-3xl text-5xl font-semibold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[50px]">
-                Projects That  Drive 
+                Projects That Drive
 
                 <span className="block bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
-                 Impact.
+                  Impact.
                 </span>
               </h1>
 

@@ -13,7 +13,6 @@ const steps = [
     title: "Understand",
     description:
       "I deeply understand the problem, users, business goals and technical requirements first.",
-    position: "top-left",
   },
   {
     number: "02",
@@ -21,7 +20,6 @@ const steps = [
     title: "Design",
     description:
       "I plan the product flow, architecture and technical direction around the actual requirements.",
-    position: "bottom-left",
   },
   {
     number: "03",
@@ -29,7 +27,6 @@ const steps = [
     title: "Build",
     description:
       "I write clean, efficient and scalable code using modern development practices.",
-    position: "top-right",
   },
   {
     number: "04",
@@ -37,7 +34,6 @@ const steps = [
     title: "Deliver",
     description:
       "I test, optimize and deliver production-ready solutions that create real impact.",
-    position: "bottom-right",
   },
 ];
 
@@ -47,7 +43,7 @@ export default function MyApproach() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const heading = sectionRef.current?.querySelector(
-        ".approach-heading"
+        ".approach-heading",
       );
 
       const cards = gsap.utils.toArray<HTMLElement>(".approach-card");
@@ -73,7 +69,7 @@ export default function MyApproach() {
               start: "top 82%",
               once: true,
             },
-          }
+          },
         );
       }
 
@@ -85,7 +81,7 @@ export default function MyApproach() {
             batch,
             {
               opacity: 0,
-              y: 30,
+              y: 35,
             },
             {
               opacity: 1,
@@ -93,25 +89,14 @@ export default function MyApproach() {
               duration: 0.65,
               stagger: 0.12,
               ease: "power3.out",
-            }
+            },
           );
         },
       });
 
-      gsap.to(".approach-core", {
-        scale: 1.08,
-        boxShadow:
-          "0 0 35px rgba(47,128,255,.55),0 0 75px rgba(47,128,255,.16),inset 0 0 30px rgba(78,170,255,.12)",
-        duration: 1.8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(".approach-dot", {
-        opacity: 0.3,
-        scale: 0.6,
-        duration: 1.2,
+      gsap.to(".approach-number", {
+        opacity: 0.55,
+        duration: 1.5,
         repeat: -1,
         yoyo: true,
         stagger: 0.15,
@@ -133,22 +118,59 @@ export default function MyApproach() {
       style={{
         position: "relative",
         width: "100%",
-        padding: "140px 5%",
+        padding: "120px 5%",
         overflow: "hidden",
         background: "#071225",
         color: "#F4F7FC",
       }}
     >
+      {/* Background */}
       <div
         style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            left: "-10%",
+            top: "10%",
+            width: "420px",
+            height: "420px",
+            borderRadius: "50%",
+            background: "rgba(47,128,255,.06)",
+            filter: "blur(120px)",
+          }}
+        />
+
+        <div
+          style={{
+            position: "absolute",
+            right: "-10%",
+            bottom: "5%",
+            width: "420px",
+            height: "420px",
+            borderRadius: "50%",
+            background: "rgba(47,128,255,.05)",
+            filter: "blur(120px)",
+          }}
+        />
+      </div>
+
+      <div
+        style={{
+          position: "relative",
           width: "min(1180px,100%)",
           margin: "0 auto",
         }}
       >
+        {/* Heading */}
         <div
           className="approach-heading"
           style={{
-            marginBottom: "55px",
+            marginBottom: "60px",
           }}
         >
           <span
@@ -170,6 +192,7 @@ export default function MyApproach() {
                 background: "#4DA3FF",
               }}
             />
+
             MY APPROACH
           </span>
 
@@ -178,14 +201,13 @@ export default function MyApproach() {
               margin: "18px 0 0",
               color: "#F4F7FC",
               fontFamily: "Georgia,serif",
-              fontSize: "clamp(40px,6vw,45px)",
+              fontSize: "clamp(40px,6vw,52px)",
               fontWeight: 400,
               lineHeight: 0.98,
               letterSpacing: "-.055em",
             }}
           >
-            From Idea
-            To{" "}
+            From Idea To{" "}
             <em
               style={{
                 color: "#4DA3FF",
@@ -195,195 +217,83 @@ export default function MyApproach() {
               Impact.
             </em>
           </h2>
+
+          <p
+            style={{
+              maxWidth: "600px",
+              margin: "22px 0 0",
+              color: "#8196B0",
+              fontFamily: "Arial,sans-serif",
+              fontSize: "13px",
+              lineHeight: 1.8,
+            }}
+          >
+            A structured approach that turns ideas into polished,
+            scalable and meaningful digital products.
+          </p>
         </div>
 
+        {/* Process Container */}
         <div
           style={{
             position: "relative",
-            minHeight: "610px",
-            overflow: "hidden",
-            border: "1px solid rgba(120,160,210,.18)",
-            borderRadius: "15px",
+            padding: "35px",
+            border: "1px solid rgba(120,160,210,.15)",
+            borderRadius: "20px",
             background:
-              "radial-gradient(circle at center,rgba(47,128,255,.07),transparent 34%),linear-gradient(145deg,rgba(13,31,54,.92),rgba(6,18,34,.98))",
+              "linear-gradient(145deg,rgba(13,31,54,.82),rgba(6,18,34,.96))",
+            boxShadow: "0 25px 80px rgba(0,0,0,.18)",
+            overflow: "hidden",
           }}
         >
+          {/* Grid */}
           <div
             style={{
               position: "absolute",
               inset: 0,
-              opacity: 0.13,
+              opacity: 0.08,
               backgroundImage:
                 "linear-gradient(rgba(77,145,220,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(77,145,220,.08) 1px,transparent 1px)",
-              backgroundSize: "55px 55px",
+              backgroundSize: "50px 50px",
+              pointerEvents: "none",
             }}
           />
 
-
+          {/* Connecting Line */}
           <div
-            className="approach-core"
+            className="approach-connection"
             style={{
               position: "absolute",
-              zIndex: 10,
-              left: "50%",
-              top: "50%",
-              width: "78px",
-              height: "78px",
-              transform: "translate(-50%,-50%)",
-              display: "grid",
-              placeItems: "center",
-              border: "1px solid rgba(76,170,255,.8)",
-              borderRadius: "50%",
+              left: "12%",
+              right: "12%",
+              top: "88px",
+              height: "1px",
               background:
-                "radial-gradient(circle,rgba(47,128,255,.22),rgba(5,20,38,.98) 68%)",
-              color: "#5BB5FF",
-              fontSize: "23px",
-              boxShadow:
-                "0 0 30px rgba(47,128,255,.4),inset 0 0 25px rgba(47,128,255,.12)",
+                "linear-gradient(90deg,transparent,rgba(65,160,255,.5),rgba(65,160,255,.5),transparent)",
+            }}
+          />
+
+          {/* Cards */}
+          <div
+            className="approach-grid"
+            style={{
+              position: "relative",
+              zIndex: 2,
+              display: "grid",
+              gridTemplateColumns: "repeat(4,1fr)",
+              gap: "18px",
             }}
           >
-            ✦
-          </div>
-
-          <div
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "50%",
-              width: "130px",
-              height: "130px",
-              transform: "translate(-50%,-50%)",
-              border: "1px solid rgba(63,158,255,.25)",
-              borderRadius: "50%",
-            }}
-          />
-
-
-          <div
-            style={{
-              position: "absolute",
-              left: "24%",
-              right: "50%",
-              top: "50%",
-              height: "1px",
-              background:
-                "linear-gradient(90deg,transparent,rgba(65,160,255,.55))",
-            }}
-          />
-
-          <div
-            style={{
-              position: "absolute",
-              left: "50%",
-              right: "24%",
-              top: "50%",
-              height: "1px",
-              background:
-                "linear-gradient(90deg,rgba(65,160,255,.55),transparent)",
-            }}
-          />
-
-          <div
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "24%",
-              bottom: "50%",
-              width: "1px",
-              background:
-                "linear-gradient(180deg,transparent,rgba(65,160,255,.55))",
-            }}
-          />
-
-          <div
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "50%",
-              bottom: "24%",
-              width: "1px",
-              background:
-                "linear-gradient(180deg,rgba(65,160,255,.55),transparent)",
-            }}
-          />
-
-
-          <span
-            className="approach-dot"
-            style={{
-              position: "absolute",
-              left: "30%",
-              top: "50%",
-              width: "5px",
-              height: "5px",
-              borderRadius: "50%",
-              background: "#4DA3FF",
-              boxShadow: "0 0 12px #4DA3FF",
-            }}
-          />
-
-          <span
-            className="approach-dot"
-            style={{
-              position: "absolute",
-              right: "30%",
-              top: "50%",
-              width: "5px",
-              height: "5px",
-              borderRadius: "50%",
-              background: "#4DA3FF",
-              boxShadow: "0 0 12px #4DA3FF",
-            }}
-          />
-
-          <span
-            className="approach-dot"
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "30%",
-              width: "5px",
-              height: "5px",
-              borderRadius: "50%",
-              background: "#4DA3FF",
-              boxShadow: "0 0 12px #4DA3FF",
-            }}
-          />
-
-          <span
-            className="approach-dot"
-            style={{
-              position: "absolute",
-              left: "50%",
-              bottom: "30%",
-              width: "5px",
-              height: "5px",
-              borderRadius: "50%",
-              background: "#4DA3FF",
-              boxShadow: "0 0 12px #4DA3FF",
-            }}
-          />
-
-
-          {steps.map((step) => {
-            const left = step.position.includes("left");
-            const top = step.position.includes("top");
-
-            return (
+            {steps.map((step) => (
               <div
                 key={step.number}
                 className="approach-card"
                 style={{
-                  position: "absolute",
-                  zIndex: 15,
-                  width: "300px",
-                  top: top ? "40px" : "auto",
-                  bottom: !top ? "40px" : "auto",
-                  left: left ? "40px" : "auto",
-                  right: !left ? "40px" : "auto",
-                  padding: "22px",
-                  border: "1px solid rgba(120,160,210,.18)",
-                  borderRadius: "10px",
+                  position: "relative",
+                  minHeight: "320px",
+                  padding: "25px 22px",
+                  border: "1px solid rgba(120,160,210,.16)",
+                  borderRadius: "15px",
                   background:
                     "linear-gradient(145deg,rgba(14,34,58,.96),rgba(7,19,35,.98))",
                   transition:
@@ -391,62 +301,86 @@ export default function MyApproach() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform =
-                    "translateY(-7px) scale(1.02)";
+                    "translateY(-8px)";
                   e.currentTarget.style.borderColor =
-                    "rgba(72,164,255,.7)";
+                    "rgba(72,164,255,.65)";
                   e.currentTarget.style.boxShadow =
-                    "0 20px 55px rgba(0,0,0,.28),0 0 40px rgba(47,128,255,.16)";
+                    "0 20px 50px rgba(0,0,0,.28),0 0 35px rgba(47,128,255,.12)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform =
-                    "translateY(0) scale(1)";
+                    "translateY(0)";
                   e.currentTarget.style.borderColor =
-                    "rgba(120,160,210,.18)";
+                    "rgba(120,160,210,.16)";
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
+                {/* Number */}
                 <div
                   style={{
+                    position: "relative",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    marginBottom: "18px",
+                    marginBottom: "35px",
                   }}
                 >
                   <div
                     style={{
-                      width: "38px",
-                      height: "38px",
+                      position: "relative",
+                      zIndex: 3,
+                      width: "48px",
+                      height: "48px",
                       display: "grid",
                       placeItems: "center",
-                      border: "1px solid rgba(65,157,255,.3)",
-                      borderRadius: "7px",
-                      background: "rgba(47,128,255,.05)",
+                      border: "1px solid rgba(65,157,255,.45)",
+                      borderRadius: "50%",
+                      background:
+                        "radial-gradient(circle,rgba(47,128,255,.18),rgba(5,20,38,.95))",
                       color: "#4DA3FF",
                       fontFamily: "monospace",
-                      fontSize: "15px",
+                      fontSize: "14px",
+                      boxShadow:
+                        "0 0 20px rgba(47,128,255,.12)",
                     }}
                   >
                     {step.icon}
                   </div>
 
                   <span
+                    className="approach-number"
                     style={{
-                      color: "#46627F",
+                      color: "rgba(77,163,255,.35)",
                       fontFamily: "monospace",
-                      fontSize: "15px",
+                      fontSize: "13px",
+                      fontWeight: 600,
                     }}
                   >
                     {step.number}
                   </span>
                 </div>
 
+                {/* Step */}
+                <p
+                  style={{
+                    margin: "0 0 10px",
+                    color: "#4DA3FF",
+                    fontFamily: "Arial,sans-serif",
+                    fontSize: "9px",
+                    fontWeight: 700,
+                    letterSpacing: ".2em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  STEP {step.number}
+                </p>
+
                 <h3
                   style={{
-                    margin: "0 0 8px",
+                    margin: "0 0 12px",
                     color: "#F2F6FC",
                     fontFamily: "Georgia,serif",
-                    fontSize: "20px",
+                    fontSize: "22px",
                     fontWeight: 400,
                   }}
                 >
@@ -458,17 +392,89 @@ export default function MyApproach() {
                     margin: 0,
                     color: "#8196B0",
                     fontFamily: "Arial,sans-serif",
-                    fontSize: "15px",
+                    fontSize: "13px",
                     lineHeight: 1.8,
                   }}
                 >
                   {step.description}
                 </p>
+
+                {/* Bottom Accent */}
+                <div
+                  style={{
+                    position: "absolute",
+                    left: "22px",
+                    right: "22px",
+                    bottom: "20px",
+                    height: "1px",
+                    background:
+                      "linear-gradient(90deg,rgba(77,163,255,.45),transparent)",
+                  }}
+                />
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 900px) {
+          #approach {
+            padding: 90px 6%;
+          }
+
+          .approach-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+
+          .approach-connection {
+            display: none;
+          }
+        }
+
+        @media (max-width: 600px) {
+          #approach {
+            padding: 75px 18px;
+          }
+
+          .approach-heading {
+            margin-bottom: 40px !important;
+          }
+
+          .approach-heading h2 {
+            font-size: 36px !important;
+          }
+
+          .approach-heading p {
+            font-size: 12px !important;
+          }
+
+          .approach-grid {
+            grid-template-columns: 1fr !important;
+            gap: 14px !important;
+          }
+
+          .approach-card {
+            min-height: auto !important;
+            padding: 22px !important;
+          }
+
+          .approach-card > div:first-child {
+            margin-bottom: 24px !important;
+          }
+        }
+
+        @media (max-width: 380px) {
+          #approach {
+            padding-left: 14px;
+            padding-right: 14px;
+          }
+
+          .approach-card {
+            padding: 18px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

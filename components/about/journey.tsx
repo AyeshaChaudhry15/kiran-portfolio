@@ -39,7 +39,6 @@ const experiences = [
     side: "right",
   },
 
-
   {
     period: "Mar 2023 — Mar 2024",
     company: "CAS — Center for Advance Solutions",
@@ -63,7 +62,6 @@ const experiences = [
     icon: FaUsers,
     side: "right",
   },
-
 ];
 
 export default function Journey() {
@@ -86,7 +84,7 @@ export default function Journey() {
             trigger: sectionRef.current,
             start: "top 78%",
           },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -105,7 +103,7 @@ export default function Journey() {
             trigger: ".journey-list",
             start: "top 78%",
           },
-        }
+        },
       );
 
       gsap.to(".journey-core", {
@@ -137,7 +135,7 @@ export default function Journey() {
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 mx-auto w-full max-w-[1100px]">
+      <div className="relative z-10 mx-auto w-full max-w-[1000px]">
         {/* Heading */}
         <div className="journey-heading mb-12 text-center sm:mb-16 md:mb-20">
           <span className="inline-block text-[9px] font-bold uppercase tracking-[0.25em] text-[#4DA3FF] sm:text-[10px]">
@@ -155,74 +153,81 @@ export default function Journey() {
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Vertical Journey */}
         <div className="journey-list relative">
-          {/* Center Line */}
-          <div className="journey-line absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-blue-400/40 to-transparent" />
+          {/* Vertical Line */}
+          <div className="journey-line absolute bottom-5 left-5 top-5 w-px bg-gradient-to-b from-transparent via-blue-400/40 to-transparent sm:left-6" />
 
           {experiences.map((experience, index) => {
             const Icon = experience.icon;
-            const isLeft = experience.side === "left";
 
             return (
               <div
                 key={`${experience.company}-${experience.role}-${experience.period}-${index}`}
-                className="journey-item relative mb-10 w-full last:mb-0 sm:mb-14 md:mb-16"
+                className="journey-item relative mb-7 pl-14 last:mb-0 sm:pl-16"
               >
-                {/* Timeline Dot */}
-                <div className="journey-core absolute left-1/2 top-9 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-[#071225] bg-[#4DA3FF] shadow-[0_0_16px_rgba(47,128,255,.55)]" />
+                {/* Timeline Core */}
+                <div className="journey-core absolute left-[11px] top-7 z-10 flex h-5 w-5 items-center justify-center rounded-full border-[3px] border-[#071225] bg-[#4DA3FF] shadow-[0_0_16px_rgba(47,128,255,.55)] sm:left-[15px]">
+                  <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                </div>
 
-                {/* Card Wrapper */}
-                <div
-                  className={`flex w-full ${
-                    isLeft ? "justify-start" : "justify-end"
-                  }`}
+                {/* Journey Card */}
+                <article className="journey-card relative overflow-hidden rounded-2xl border border-[rgba(120,160,210,.16)] bg-gradient-to-br from-[rgba(14,32,55,.96)] to-[rgba(7,19,35,.98)] p-5 shadow-[0_15px_45px_rgba(0,0,0,.16)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/50 hover:shadow-[0_20px_55px_rgba(0,0,0,.25),0_0_35px_rgba(47,128,255,.1)] sm:p-6 md:p-7"
                 >
-                  <article className="journey-card w-[43%] rounded-xl border border-[rgba(120,160,210,.18)] bg-gradient-to-br from-[rgba(14,32,55,.94)] to-[rgba(7,19,35,.96)] p-5 shadow-none transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-400/60 hover:shadow-[0_20px_55px_rgba(0,0,0,.25),0_0_35px_rgba(47,128,255,.12)] sm:p-6">
-                    {/* Top */}
-                    <div className="flex items-start justify-between gap-4">
-                      <span className="inline-block rounded border border-blue-400/25 bg-blue-500/[0.06] px-2 py-1 font-mono text-[9px] text-[#4DA3FF] sm:text-[10px]">
+                  {/* Subtle Card Glow */}
+                  <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-full bg-blue-500/[0.035] blur-[50px]" />
+
+                  {/* Top Row */}
+                  <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <span className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/[0.06] px-3 py-1.5 font-mono text-[9px] text-[#4DA3FF] sm:text-[10px]">
+                        <FaCalendarDays className="text-[9px]" />
                         {experience.period}
                       </span>
 
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-blue-400/15 bg-blue-500/[0.06] text-blue-400">
-                        <Icon className="text-xs sm:text-sm" />
-                      </div>
+                      <h3 className="mt-5 font-serif text-[20px] font-normal leading-tight text-[#F2F6FC] sm:text-[23px]">
+                        {experience.company}
+                      </h3>
+
+                      <h4 className="mt-1.5 text-[13px] font-semibold leading-5 text-[#4DA3FF] sm:text-[14px]">
+                        {experience.role}
+                      </h4>
                     </div>
 
-                    {/* Company */}
-                    <h3 className="mt-5 font-serif text-[18px] font-normal leading-tight text-[#F2F6FC] sm:text-[20px]">
-                      {experience.company}
-                    </h3>
+                    {/* Icon */}
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-500/[0.06] text-blue-400">
+                      <Icon className="text-sm" />
+                    </div>
+                  </div>
 
-                    {/* Role */}
-                    <h4 className="mt-1.5 text-[13px] font-semibold leading-5 text-[#4DA3FF] sm:text-[14px]">
-                      {experience.role}
-                    </h4>
-
-                    {/* Location */}
-                    <div className="mt-3 flex items-start gap-2 text-[10px] leading-5 text-[#71869F] sm:text-[11px]">
-                      <FaLocationDot className="mt-1 shrink-0 text-blue-400/70" />
-
+                  {/* Meta */}
+                  <div className="relative mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] text-[#71869F] sm:text-[11px]">
+                    <div className="flex items-center gap-2">
+                      <FaLocationDot className="shrink-0 text-blue-400/70" />
                       <span>{experience.location}</span>
                     </div>
 
-                    {/* Divider */}
-                    <div className="my-4 h-px bg-blue-900/40" />
-
-                    {/* Description */}
-                    <p className="text-[11px] leading-6 text-[#8196B0] sm:text-[12px] sm:leading-7">
-                      {experience.description}
-                    </p>
-
-                    {/* Footer */}
-                    <div className="mt-5 flex items-center gap-2 text-[10px] text-[#667C96] sm:text-[11px]">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(77,163,255,.6)]" />
-
-                      {experience.type}
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(77,163,255,.6)]" />
+                      <span>{experience.type}</span>
                     </div>
-                  </article>
-                </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="my-5 h-px bg-gradient-to-r from-blue-500/25 via-blue-900/40 to-transparent" />
+
+                  {/* Description */}
+                  <p className="relative max-w-3xl text-[11px] leading-6 text-[#8196B0] sm:text-[12px] sm:leading-7">
+                    {experience.description}
+                  </p>
+
+                  {/* Bottom Accent */}
+                  <div className="mt-6 flex items-center gap-2">
+                    <span className="h-1 w-8 rounded-full bg-blue-400/70" />
+                    <span className="h-1 w-2 rounded-full bg-cyan-400/40" />
+                    <span className="h-px flex-1 bg-blue-900/30" />
+                  </div>
+                </article>
               </div>
             );
           })}
@@ -231,34 +236,6 @@ export default function Journey() {
 
       {/* Responsive CSS */}
       <style jsx>{`
-        @media (max-width: 900px) {
-          .journey-list {
-            padding-left: 30px;
-          }
-
-          .journey-line {
-            left: 7px;
-            transform: none;
-          }
-
-          .journey-item {
-            display: block;
-          }
-
-          .journey-core {
-            left: 7px;
-            top: 38px;
-          }
-
-          .journey-item > div {
-            display: block;
-          }
-
-          .journey-card {
-            width: 100%;
-          }
-        }
-
         @media (max-width: 640px) {
           #journey {
             padding-top: 75px;
@@ -279,23 +256,32 @@ export default function Journey() {
           }
 
           .journey-list {
-            padding-left: 25px;
+            padding-left: 0;
           }
 
           .journey-line {
-            left: 6px;
+            left: 4px;
           }
 
           .journey-core {
-            left: 6px;
-            top: 34px;
+            left: -1px;
+            top: 30px;
             width: 10px;
             height: 10px;
           }
 
+          .journey-core > div {
+            display: none;
+          }
+
+          .journey-item {
+            padding-left: 25px;
+            margin-bottom: 25px;
+          }
+
           .journey-card {
             padding: 17px;
-            border-radius: 10px;
+            border-radius: 12px;
           }
 
           .journey-card h3 {
@@ -305,10 +291,6 @@ export default function Journey() {
           .journey-card h4 {
             font-size: 12px;
           }
-
-          .journey-item {
-            margin-bottom: 30px;
-          }
         }
 
         @media (max-width: 380px) {
@@ -317,16 +299,16 @@ export default function Journey() {
             padding-right: 14px;
           }
 
-          .journey-list {
-            padding-left: 22px;
-          }
-
           .journey-line {
-            left: 5px;
+            left: 3px;
           }
 
           .journey-core {
-            left: 5px;
+            left: -2px;
+          }
+
+          .journey-item {
+            padding-left: 23px;
           }
 
           .journey-card {
