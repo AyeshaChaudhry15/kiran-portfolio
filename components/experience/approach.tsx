@@ -112,13 +112,9 @@ export default function Approach() {
             </p>
           </div>
 
-          <h2 className="font-serif text-4xl font-normal leading-[1.05] tracking-[-0.05em] text-slate-100 sm:text-5xl lg:text-[54px]">
-            How I Turn Ideas
-            <br />
-            Into{" "}
-            <span className="italic text-blue-400">
-              Products.
-            </span>
+          <h2 className="whitespace-nowrap font-serif text-2xl font-normal leading-[1.05] tracking-[-0.05em] text-slate-100 sm:text-4xl lg:text-[54px]">
+            How I Turn Ideas Into{" "}
+            <span className="italic text-blue-400">Products.</span>
           </h2>
 
           <p className="mt-6 max-w-xl text-sm leading-7 text-slate-400">
@@ -145,9 +141,7 @@ export default function Approach() {
                   {/* Card Glow */}
                   <div
                     className={`pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full blur-[80px] ${
-                      isCyan
-                        ? "bg-cyan-400/[0.07]"
-                        : "bg-blue-400/[0.07]"
+                      isCyan ? "bg-cyan-400/[0.07]" : "bg-blue-400/[0.07]"
                     }`}
                   />
 
@@ -180,9 +174,7 @@ export default function Approach() {
                       >
                         <Icon
                           className={`text-[22px] transition-transform duration-500 group-hover:scale-110 ${
-                            isCyan
-                              ? "text-cyan-400"
-                              : "text-blue-400"
+                            isCyan ? "text-cyan-400" : "text-blue-400"
                           }`}
                         />
                       </div>
@@ -216,9 +208,7 @@ export default function Approach() {
                   {/* Bottom Accent */}
                   <div
                     className={`absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-500 group-hover:w-full ${
-                      isCyan
-                        ? "bg-cyan-400"
-                        : "bg-blue-400"
+                      isCyan ? "bg-cyan-400" : "bg-blue-400"
                     }`}
                   />
                 </article>
