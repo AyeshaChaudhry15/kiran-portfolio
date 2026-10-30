@@ -126,7 +126,7 @@ export default function AppDevelopment() {
           </div>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative lg:translate-y-8">
           <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
             <div>
               <p className="text-sm font-semibold text-white">

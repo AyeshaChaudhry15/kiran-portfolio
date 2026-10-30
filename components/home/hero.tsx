@@ -42,7 +42,7 @@ const stats = [
   {
     icon: FaShieldAlt,
     value: "Secure",
-    label: "Firebase Integration",
+    label: "AI Integration",
     color: "text-sky-300",
   },
   {

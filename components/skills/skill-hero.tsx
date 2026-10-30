@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -107,38 +108,61 @@ export default function SkillsHero() {
               practices.
             </p>
 
-            <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-blue-400/15 bg-blue-500/[0.06] p-4 backdrop-blur-sm">
-                <FaMobileAlt className="text-lg text-blue-300" />
+            {/* Skills Cards - Single Row */}
+            <div className="mt-8 grid w-full max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-2.5">
 
-                <p className="mt-3 text-sm font-semibold text-white">Flutter</p>
+              {/* Flutter */}
+              <div className="min-w-0 rounded-lg border border-blue-400/15 bg-blue-500/[0.06] p-3 backdrop-blur-sm sm:p-2.5 lg:p-3">
+                <FaMobileAlt className="text-base text-blue-300" />
 
-                <p className="mt-1 text-[11px] text-slate-500">
+                <p className="mt-2 text-xs font-semibold text-white sm:text-[11px] lg:text-xs">
+                  Flutter
+                </p>
+
+                <p className="mt-1 text-[9px] leading-4 text-slate-500 sm:text-[9px]">
                   Cross Platform
                 </p>
               </div>
 
-              <div className="rounded-xl border border-blue-400/15 bg-blue-500/[0.06] p-4 backdrop-blur-sm">
-                <FaDatabase className="text-lg text-cyan-300" />
+              {/* Firebase */}
+              <div className="min-w-0 rounded-lg border border-blue-400/15 bg-blue-500/[0.06] p-3 backdrop-blur-sm sm:p-2.5 lg:p-3">
+                <FaDatabase className="text-base text-cyan-300" />
 
-                <p className="mt-3 text-sm font-semibold text-white">
+                <p className="mt-2 text-xs font-semibold text-white sm:text-[11px] lg:text-xs">
                   Firebase
                 </p>
 
-                <p className="mt-1 text-[11px] text-slate-500">
+                <p className="mt-1 text-[9px] leading-4 text-slate-500 sm:text-[9px]">
                   Cloud Services
                 </p>
               </div>
 
-              <div className="rounded-xl border border-blue-400/15 bg-blue-500/[0.06] p-4 backdrop-blur-sm">
-                <FaServer className="text-lg text-blue-300" />
+              {/* REST APIs */}
+              <div className="min-w-0 rounded-lg border border-blue-400/15 bg-blue-500/[0.06] p-3 backdrop-blur-sm sm:p-2.5 lg:p-3">
+                <FaServer className="text-base text-blue-300" />
 
-                <p className="mt-3 text-sm font-semibold text-white">
+                <p className="mt-2 text-xs font-semibold text-white sm:text-[11px] lg:text-xs">
                   REST APIs
                 </p>
 
-                <p className="mt-1 text-[11px] text-slate-500">Integrations</p>
+                <p className="mt-1 text-[9px] leading-4 text-slate-500 sm:text-[9px]">
+                  Integrations
+                </p>
               </div>
+
+              {/* AI Integration */}
+              <div className="min-w-0 rounded-lg border border-blue-400/15 bg-blue-500/[0.06] p-3 backdrop-blur-sm sm:p-2.5 lg:p-3">
+                <FaBrain className="text-base text-purple-300" />
+
+                <p className="mt-2 text-xs font-semibold text-white sm:text-[11px] lg:text-xs">
+                  AI Integration
+                </p>
+
+                <p className="mt-1 text-[9px] leading-4 text-slate-500 sm:text-[9px]">
+                  AI Features
+                </p>
+              </div>
+
             </div>
 
             <div className="mt-9 flex flex-wrap gap-4">
@@ -176,6 +200,7 @@ export default function SkillsHero() {
             </div>
           </div>
 
+          {/* Right Side Orbit Animation */}
           <div
             ref={orbitRef}
             className="relative mx-auto flex h-[500px] w-full max-w-[600px] items-center justify-center"
